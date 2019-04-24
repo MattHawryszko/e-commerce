@@ -8,7 +8,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="w-100">
-      	Dongs
+      	Contact
       </div>
     );
   }
