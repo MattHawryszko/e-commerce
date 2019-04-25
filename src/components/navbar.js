@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import * as $ from "jquery";
-import "bootstrap/js/dist/modal";
+import $ from "jquery";
+
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
@@ -31,7 +31,7 @@ window.onscroll = function() {scrollFunction()};
 export default class App extends Component {
 handleEvent = event => {
   const props = this.props;
-  if(event.target.id != "home")
+  if(event.target.id != "home" && event.target.id != "navbar-title")
     props.history.push('/'+event.target.id)
   else
     props.history.push('/')
@@ -42,7 +42,23 @@ componentDidMount(){
 render() {
   
     return (
-      <div className="navbar-padding" id="navbar-padding">    
+      <div className="navbar-padding" id="navbar-padding">
+        <div className="modal fade p-0 m-0 w-100" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog modal-bg" role="document">
+            <div className="modal-content modal-bg p-0 m-0 ">
+            <button type="button" className="close justify-content-end d-flex text-white " data-dismiss="modal" aria-label="Close"><span className="h1" aria-hidden="true">&times;</span></button>
+              <div className="modal-body modal-bg p-0 m-0 justify-content-center d-flex">
+                <ul>
+                  <li id="home" onClick={this.handleEvent} className="text-uppercase" data-dismiss="modal">home</li>
+                  <li id="about" onClick={this.handleEvent} className="text-uppercase" data-dismiss="modal">about</li>
+                  <li id="shop" onClick={this.handleEvent} className="text-uppercase" data-dismiss="modal">shop</li>
+                  <li id="faq" onClick={this.handleEvent} className="text-uppercase" data-dismiss="modal">faq</li>
+                  <li id="contact" onClick={this.handleEvent} className="text-uppercase" data-dismiss="modal">contact</li>     
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div> 
         <div className="fixed-top">
           <div id="top-bar" className="bg-black d-none d-md-block">
             <div id="nav-top" className="container">
@@ -71,27 +87,7 @@ render() {
                   <li id="faq" onClick={this.handleEvent} className="text-uppercase">faq</li>
                   <li id="contact" onClick={this.handleEvent} className="text-uppercase">contact</li>
                 </ul>
-                
               </nav>    
-              <div className="my-5"></div>
-              
-              <div className="modal fade p-0 m-0 w-100" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-bg" role="document">
-                  <div className="modal-content modal-bg p-0 m-0 ">
-                  <button type="button" className="close justify-content-end d-flex text-white " data-dismiss="modal" aria-label="Close"><span className="h1" aria-hidden="true">&times;</span></button>
-                    <div className="modal-body modal-bg p-0 m-0 justify-content-center d-flex">
-                      <ul>
-                        <li id="home" onClick={this.handleEvent} className="text-uppercase" data-dismiss="modal">home</li>
-                        <li id="about" onClick={this.handleEvent} className="text-uppercase" data-dismiss="modal">about</li>
-                        <li id="shop" onClick={this.handleEvent} className="text-uppercase" data-dismiss="modal">shop</li>
-                        <li id="faq" onClick={this.handleEvent} className="text-uppercase" data-dismiss="modal">faq</li>
-                        <li id="contact" onClick={this.handleEvent} className="text-uppercase" data-dismiss="modal">contact</li>
-                              
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           

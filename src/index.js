@@ -8,10 +8,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '@fortawesome/fontawesome-free/css/all.css';
 
-import './styles/index.scss'
+
 import './styles/bgs.scss'
 import './styles/text.scss'
 import './styles/navbar.scss'
+
+import './styles/index.scss'
+import './styles/contact.scss'
 
 import wow from "wow.js"
 

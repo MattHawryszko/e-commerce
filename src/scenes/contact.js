@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 
+import Contact from "../components/contact"
+
 export default class App extends Component {
   componentDidMount(){
     
@@ -11,7 +13,7 @@ export default class App extends Component {
     return (
       <div className="w-100">
         <Navbar history={this.props.history} />
-      	Contact
+      	<Contact />
         <Footer history={this.props.history}/>
       </div>
     );

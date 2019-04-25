@@ -3,3 +3,16 @@
 .text-yellow{
     color: $yellow !important;
 }
+.dash-white{
+    border: 1px solid #f4f5f6;
+    width: 280px;
+    height: 0px;
+}
+.dash-yellow{
+    border: 1px solid $yellow;
+    width: 340px;
+    height: 0px;
+}
+.no-bullets{
+    list-style-type: none;
+  }
