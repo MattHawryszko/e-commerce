@@ -3,6 +3,12 @@
 .text-yellow{
     color: $yellow !important;
 }
+.text-orange{
+    color: $orange !important;
+}
+.text-grey{
+    color: $light-grey !important;
+}
 .dash-white{
     border: 1px solid #f4f5f6;
     width: 280px;
@@ -15,4 +21,4 @@
 }
 .no-bullets{
     list-style-type: none;
-  }
+}

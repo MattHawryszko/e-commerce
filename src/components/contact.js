@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
+
+import Title from "../components/title"
+
+
 export default class App extends Component {
+
 componentDidMount(){
 
 }
+
 render() {
   
     return (
       <div className="">
         <div className="container nav-padding">
-          <div className="row pt-5 justify-content-center d-flex">
-              <h1 className="pt-5 text-center font-weight-bold display-4">Get In Touch!<div className="dash-yellow"></div></h1>
-          </div>
+          <div className="pt-5"></div>
+          <Title dash="dash-yellow" text="Get In Touch!"/>
           <div className="row pb-5 pt-5">
           <div className="col-12 col-md-8 px-5">
             <ul className="text-light-grey">
@@ -40,13 +45,13 @@ render() {
           <div className="col-12 col-md-4 p-0">
             <h3 className="pt-2 pb-3 text-center font-weight-bold">Hour's of operation</h3>
             <ul className="pb-2 no-bullets">
-              <li className="text-center">Monday	9:30 am	- 9:30 pm</li>
-              <li className="text-center">Tuesday	9:30 am	- 9:30 pm</li>
-              <li className="text-center">Wednesday	9:30 am	- 9:30 pm</li>
-              <li className="text-center">Thursday	9:30 am	- 9:30 pm</li>
-              <li className="text-center">Friday	9:30 am	- 9:30 pm</li>
-              <li className="text-center">Saturday	9:30 am	- 9:30 pm</li>
-              <li className="text-center">Sunday	9:30 am	- 9:30 pm</li>
+              <li className="text-grey text-center">Monday	9:30 am	- 9:30 pm</li>
+              <li className="text-grey text-center">Tuesday	9:30 am	- 9:30 pm</li>
+              <li className="text-grey text-center">Wednesday	9:30 am	- 9:30 pm</li>
+              <li className="text-grey text-center">Thursday	9:30 am	- 9:30 pm</li>
+              <li className="text-grey text-center">Friday	9:30 am	- 9:30 pm</li>
+              <li className="text-grey text-center">Saturday	9:30 am	- 9:30 pm</li>
+              <li className="text-grey text-center">Sunday	9:30 am	- 9:30 pm</li>
             </ul>
           </div>
         </div>
