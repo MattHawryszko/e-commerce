@@ -29,6 +29,7 @@ function scrollFunction() {
 window.onscroll = function() {scrollFunction()};
 
 export default class App extends Component {
+  
 handleEvent = event => {
   const props = this.props;
   if(event.target.id != "home" && event.target.id != "navbar-title")

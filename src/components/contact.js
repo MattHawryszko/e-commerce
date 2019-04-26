@@ -15,7 +15,7 @@ render() {
       <div className="">
         <div className="container nav-padding">
           <div className="pt-5"></div>
-          <Title dash="dash-yellow" text="Get In Touch!"/>
+          <Title class="display-4" dash="dash-yellow" text="Get In Touch!"/>
           <div className="row pb-5 pt-5">
           <div className="col-12 col-md-8 px-5">
             <ul className="text-light-grey">

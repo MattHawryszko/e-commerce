@@ -12,7 +12,7 @@ render() {
       <div className="">
         <div className="container nav-padding">
           <div className="pt-5"></div>
-          <Title dash="dash-yellow" text="Frequently Asked Questions"/>
+          <Title class="display-4" dash="dash-yellow" text="Frequently Asked Questions"/>
           <div className="row py-5">
             <h4 className="text-orange font-weight-bold">Shipping Information</h4>
           </div>

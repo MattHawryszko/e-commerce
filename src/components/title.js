@@ -9,11 +9,12 @@ render() {
       <div className="">
 
           <div className="row justify-content-center">
-            <h1 className="pt-5 text-center font-weight-bold display-4">{this.props.text}</h1>
+            <div className="col-6">
+              <h1 className={"pt-5 text-center font-weight-bold "+this.props.class}>{this.props.text}</h1>
+            </div>
           </div>
           <div className="row pt-3 justify-content-center">
-              
-              <div className={this.props.dash}></div>
+            <div className={this.props.dash}></div>
           </div>
           
 
