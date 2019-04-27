@@ -84,6 +84,9 @@ render() {
                   <li id="shop" onClick={this.handleEvent} className="text-uppercase">shop</li>
                   <li id="faq" onClick={this.handleEvent} className="text-uppercase">faq</li>
                   <li id="contact" onClick={this.handleEvent} className="text-uppercase">contact</li>
+                  <li id="cart" onClick={this.handleEvent} className="text-uppercase font-weight-light pr-1"><i id="cart" class="pt-1 fa-lg pr-1 fas fa-shopping-cart"></i>0</li>
+                  <li id="wishlist" onClick={this.handleEvent} className="text-uppercase font-weight-light px-1"><i id="wishlist" class="pt-1 pr-1 fa-lg fas fa-heart"></i>0</li>
+                  <li id="cart" onClick={this.handleEvent} className="text-uppercase px-1 "><i id="account" class="pt-1 fa-lg fas fa-user-circle"></i></li>
                 </ul>
               </nav>    
             </div>

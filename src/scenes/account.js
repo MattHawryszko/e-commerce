@@ -11,7 +11,9 @@ export default class App extends Component {
     return (
       <div className="w-100">
         <Navbar history={this.props.history} />
-      	Account
+      	
+        <div className="p-5"></div>
+        Account
         <Footer history={this.props.history}/>
       </div>
     );
