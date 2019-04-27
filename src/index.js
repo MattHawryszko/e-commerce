@@ -11,6 +11,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 import './styles/bgs.scss'
 import './styles/text.scss'
+import './styles/buttons.scss'
 import './styles/navbar.scss'
 
 import './styles/index.scss'

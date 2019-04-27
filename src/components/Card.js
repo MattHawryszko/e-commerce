@@ -11,12 +11,19 @@ render() {
       title = <Title class="h3" text={this.props.title}/>;
     }
     return (
-      <div className="wow slideInLeft faster col-lg-4 col-md-6 pb-2">
+
+
+      <div className="col-lg-4 col-md-6 pb-2">
         {title}
-        <img src={this.props.img} alt="card-img" className="img-fluid"/>
+        <div className="justify-content-center row">
+        <img src={this.props.img} alt="card-img" className="img-fluid img-responsive"/>
+        </div>
+          
+
         <p className="text-gray text-center pt-5 pb-0 mb-0">{this.props.text}</p>
         <p className="text-gray text-center p-0 m-0">{this.props.text2}</p>
       </div>
+
 
       );
   }

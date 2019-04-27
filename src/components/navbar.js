@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 import $ from "jquery";
 
-
-const delay = ms => new Promise(res => setTimeout(res, ms));
-
 function scrollFunction() {
   if($(window).innerWidth() > 768){
     if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
@@ -32,7 +29,7 @@ export default class App extends Component {
   
 handleEvent = event => {
   const props = this.props;
-  if(event.target.id != "home" && event.target.id != "navbar-title")
+  if(event.target.id !== "home" && event.target.id !== "navbar-title")
     props.history.push('/'+event.target.id)
   else
     props.history.push('/')
