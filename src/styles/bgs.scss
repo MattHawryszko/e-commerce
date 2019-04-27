@@ -1,5 +1,12 @@
 @import './colors.scss';
-
+.bg-dark{
+    background-color: rgb(43, 46, 50);
+    max-width: 100vw;
+  }
+  .bg-darker{
+    background-color: rgb(25, 26, 29);
+    max-width: 100vw;
+  }
 .bg-black{
     background-color: $black;
     width: 100%;

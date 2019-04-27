@@ -12,6 +12,7 @@ export default class App extends Component {
       <div className="w-100">
         <Navbar history={this.props.history} />
       	Index
+        <div className="p-5"></div>
         <Footer history={this.props.history}/>
       </div>
     );
