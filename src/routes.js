@@ -37,7 +37,7 @@ export default () => {
 							<Route exact={true} path="/register" component={Register} />
 							<Route exact={true} path="/forgotpassword" component={ForgotPassword} />
 							<Route exact={true} path="/shop" component={Shop} />
-							<Route exact={true} path="/product" component={Product} />
+							<Route exact={true} path="/product/:id" component={Product} />
 							<Route exact={true} path="/cart" component={Cart} />
 							<Route exact={true} path="/checkout" component={Checkout} />
 							<Route exact={true} path="/wishlist" component={Wishlist} />
