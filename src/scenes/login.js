@@ -13,7 +13,7 @@ export default class App extends Component {
         <Navbar history={this.props.history} />
       	
         <div className="p-5"></div>
-        Checkout
+        Login
         <Footer history={this.props.history}/>
       </div>
     );

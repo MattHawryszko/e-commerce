@@ -41,9 +41,10 @@ export default class App extends Component {
       <div className="">
         <Navbar history={this.props.history} />
       	<div className="container py-5">
-          <div className="pt-5 row">
-            <ProductImages images={this.state.images}/>
+          <div className="pt-5 row flex-xl-row-reverse ">
+            
             <ProductInfo product={this.state.product} categories={this.state.categories} />
+            <ProductImages images={this.state.images}/>
           </div>
         </div>
 

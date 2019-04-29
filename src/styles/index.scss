@@ -28,6 +28,17 @@ code {
 .col1-thumbnail {
   position: relative;
   overflow: hidden;
-  width: 85px;
-  height: 85px;
+  width: 126px;
+  height: 126px;
+}
+#quantity{
+  min-width: 60px !important;
+  max-width: 60px !important;
+  background-color: transparent;
+  border: 0px solid;
+}
+#quantity:focus{
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
