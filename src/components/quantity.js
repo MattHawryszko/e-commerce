@@ -46,13 +46,13 @@ render() {
     <div class="col-6 pt-2 pl-4 pr-0 mr-md-5 mr-1">
       <div class="input-group">
         <span class="input-group-btn">
-          <button type="button" class="quantity-left-minus btn btn-number btn-circle bg-secondary"  data-type="minus" data-field="">
+          <button type="button" class="quantity-left-minus btn btn-number btn-circle bg-light-grey"  data-type="minus" data-field="">
             <span class="text-white fas fa-minus"></span>
           </button>
         </span>
         <input type="text" id="quantity" name="quantity" class="text-center form-control input-number" value="1" min="1" max="99" disabled="disabled" />
         <span class="input-group-btn">
-            <button type="button" class="quantity-right-plus btn btn-number btn-circle bg-secondary" data-type="plus" data-field="">
+            <button type="button" class="quantity-right-plus btn btn-number btn-circle bg-light-grey" data-type="plus" data-field="">
               <span class="text-white fas fa-plus"></span>
             </button>
         </span>

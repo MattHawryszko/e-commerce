@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 import $ from "jquery";
 
 function scrollFunction() {
-  if($(window).innerWidth() > 768){
-    if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+  if($(window).innerWidth() < 168){
+    if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60 ) {
       document.getElementById("nav-color").style.backgroundColor = "#000";
       document.getElementById("navbar-list").style.color = "white";
       document.getElementById("navbar-title").style.color = "white";
       document.getElementById("navbar").style.position = "relative";
       document.getElementById("nav-top").style.position = "absolute";
       document.getElementById("nav-top").style.display = "none";
+      
   
     } else {
       document.getElementById("nav-color").style.backgroundColor = "transparent";
@@ -24,6 +25,7 @@ function scrollFunction() {
 
 }
 window.onscroll = function() {scrollFunction()};
+
 
 export default class App extends Component {
   
@@ -77,7 +79,14 @@ render() {
             <div className="container">
               <nav id="navbar" className="navbar navbar-expand-lg justify-content-between p-0">
                 <h2 id="home" onClick={this.handleEvent} className="title-font pl-3"><span className="text-yellow">e</span> <span id="navbar-title">Shop</span></h2>
-                <a href="#exampleModal" role="button" className="btn toggleNav pl-4 pt-1 pb-2 d-flex d-md-none" data-toggle="modal" data-target="#exampleModal"><i className="p-0 m-0 fas fa-bars fa-2x text-white toggleNav"></i></a>
+
+                <ul id="navbar-list" className="d-flex d-md-none p-0 m-0">
+                  <li id="cart" onClick={this.handleEvent} className="text-uppercase font-weight-light pr-1"><i id="cart" class="pt-1 fa-lg pr-1 fas fa-shopping-cart"></i>0</li>
+                  <li id="wishlist" onClick={this.handleEvent} className="text-uppercase font-weight-light px-1"><i id="wishlist" class="pt-1 pr-1 fa-lg fas fa-heart"></i>0</li>
+                  <li id="cart" onClick={this.handleEvent} className="text-uppercase px-1 "><i id="account" class="pt-1 fa-lg fas fa-user-circle"></i></li>
+                  <li role="button" data-toggle="modal" data-target="#exampleModal"><i className="pt-1 pr-1 fas fa-bars fa-lg"></i></li>
+                </ul>
+                
                 <ul id="navbar-list" className="d-none d-md-flex p-0 m-0">
                   <li id="home" onClick={this.handleEvent} className="text-uppercase">home</li>
                   <li id="about" onClick={this.handleEvent} className="text-uppercase">about</li>
@@ -88,6 +97,7 @@ render() {
                   <li id="wishlist" onClick={this.handleEvent} className="text-uppercase font-weight-light px-1"><i id="wishlist" class="pt-1 pr-1 fa-lg fas fa-heart"></i>0</li>
                   <li id="cart" onClick={this.handleEvent} className="text-uppercase px-1 "><i id="account" class="pt-1 fa-lg fas fa-user-circle"></i></li>
                 </ul>
+                
               </nav>    
             </div>
           </div>

@@ -5,6 +5,7 @@ import Footer from "../components/footer"
 
 import ProductImages from "../components/productImages"
 import ProductInfo from "../components/productInfo"
+import ProductReviews from "../components/productReviews"
 
 const axios = require('axios')
 
@@ -47,7 +48,7 @@ export default class App extends Component {
             <ProductImages images={this.state.images}/>
           </div>
         </div>
-
+        <ProductReviews description={this.state.product.description} />
         <Footer history={this.props.history}/>
       </div>
     );
