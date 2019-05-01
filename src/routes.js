@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Index from './scenes/index';
 import Login from './scenes/login';
+import Logout from './scenes/logout';
 import Register from './scenes/register';
 import ForgotPassword from './scenes/forgotPassword';
 import About from './scenes/about';
@@ -34,6 +35,7 @@ export default () => {
 						<Switch>
 							<Route exact={true} path="/" component={Index} />
 							<Route exact={true} path="/login" component={Login} />
+							<Route exact={true} path="/logout" component={Logout} />
 							<Route exact={true} path="/register" component={Register} />
 							<Route exact={true} path="/forgotpassword" component={ForgotPassword} />
 							<Route exact={true} path="/shop" component={Shop} />

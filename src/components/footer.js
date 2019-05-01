@@ -14,20 +14,30 @@ render() {
 <footer className="page-footer font-small bg-dark pt-4">
     <div className="container text-center text-md-left">
       <div className="row">
-        <div className="col-md-4 mx-auto">
+        <div className="col-lg-3 mx-auto">
           <h2 id="home" onClick={this.handleEvent} className="pointer-cursor"><span className="text-yellow">e</span> <span className="text-white">Shop</span></h2>
           <p className="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem error repellendus aspernatur laboriosam aliquid aperiam, doloribus, libero provident incidunt repudiandae tempore inventore numquam quaerat ipsam modi laborum fugit nulla magnam!</p>
         </div>
-        <div className="col-md-2 mx-auto">
+      
+        <div className="col-lg-4 mx-auto">
           <h5 className="font-weight-bold text-uppercase text-grey mt-3 mb-4"> Usefull Pages</h5>
-          <ul className="list-unstyled pointer-cursor">
-            <li id="home" onClick={this.handleEvent} className="text-white">Home</li>
-            <li id="about" onClick={this.handleEvent} className="text-white">About Us</li>
-            <li id="contact" onClick={this.handleEvent} className="text-white">Contact</li>
-            <li id="faq" onClick={this.handleEvent} className="text-white">FAQ</li>
-          </ul>
+          <div className="row">
+            
+            <ul className="list-unstyled pointer-cursor col-6">
+              <li id="home" onClick={this.handleEvent} className="text-white">Home</li>
+              <li id="about" onClick={this.handleEvent} className="text-white">About Us</li>
+              <li id="contact" onClick={this.handleEvent} className="text-white">Contact</li>
+              <li id="faq" onClick={this.handleEvent} className="text-white">FAQ</li>
+            </ul>
+            <ul className="list-unstyled pointer-cursor col-6">
+              <li id="login" onClick={this.handleEvent} className="text-white">Login</li>
+              <li id="register" onClick={this.handleEvent} className="text-white">Register</li>
+              <li id="terms-and-conditions" onClick={this.handleEvent} className="text-white">Terms And Conditions</li>
+              <li id="privacy-policy" onClick={this.handleEvent} className="text-white">Privacy Policy</li>
+            </ul>
+          </div>
         </div>
-        <div className="col-lg-4 pb-5">
+        <div className="col-lg-3 pb-5">
             <p className="text-white">Connect with us</p>
             <a className="p-2 text-white" href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank"><i className="fab fa-facebook location-text text-md"></i></a>
             <a className="p-2 text-white" href="https://twitter.com/" rel="noopener noreferrer" target="_blank"><i className="fab fa-twitter location-text text-md"></i></a>

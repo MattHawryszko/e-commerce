@@ -15,6 +15,7 @@ import './styles/buttons.scss'
 import './styles/navbar.scss'
 
 import './styles/index.scss'
+import './styles/login.scss'
 import './styles/contact.scss'
 
 import wow from "wow.js"
