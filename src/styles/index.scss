@@ -32,6 +32,12 @@ code {
   width: 126px;
   height: 126px;
 }
+.wishlist-thumbnail {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
 #quantity{
   min-width: 60px !important;
   max-width: 60px !important;

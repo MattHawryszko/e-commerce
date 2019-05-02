@@ -31,11 +31,18 @@ export default class App extends Component {
       })
     .then(function(data) {
       if(data){
-  
+        if(!window.sessionStorage.wishlistId){
+          window.sessionStorage.setItem('wishlistId', data.data.user.wishlistId)
+        }
+        if(!window.sessionStorage.cartId){
+          window.sessionStorage.setItem('cartId', data.data.user.cartId)
+        }
         window.sessionStorage.setItem('accessToken', data.data.token)
+        
         props.history.push('/account')
         window.location.reload();
       }
+
       
     }).catch(error => console.error('Error:', error));
   

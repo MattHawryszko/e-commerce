@@ -46,7 +46,7 @@ render() {
             <p className="pt-2 text-white">Sign up to our newsletter</p>
             <p className="text-grey">Subscribe to our newsletter to recive updates on the latest projects</p>
             <div className="input-group mb-3">
-              <input type="text" className="form-control" placeholder="Enter email" aria-label="Enter email" aria-describedby="basic-addon2" />
+              <input type="text" className="form-control" placeholder="email" aria-label="Enter email" aria-describedby="basic-addon2" />
               <div className="input-group-append pl-2">
                 <button className="btn btn-outline-secondary" type="button">Subscribe</button>
               </div>

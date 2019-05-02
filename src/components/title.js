@@ -18,7 +18,7 @@ render() {
     if(isURL){
       url = (
         <div className="row pt-3 justify-content-center pb-5">
-        <li id="contact" onClick={this.handleEvent} class="btn btn--sm btn-orange text-white text-uppercase" role="button">{this.props.btnText}</li>
+        <li id="contact" onClick={this.handleEvent} class="btn btn-orange text-white text-uppercase" role="button">{this.props.btnText}</li>
       </div>
       );
     }
