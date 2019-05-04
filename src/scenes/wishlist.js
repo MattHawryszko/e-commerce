@@ -54,8 +54,10 @@ export default class App extends Component {
           <Navbar history={this.props.history} />
           <div className="container nav-padding">
             <Title class="display-3" text="Wishlist"/>
-
-            {this.state.products.map(function(product, index){
+          </div>
+          <div className="container">
+          
+          {this.state.products.map(function(product, index){
             if(product.images){
               return (
                 <ul className="no-bullets">
@@ -104,8 +106,7 @@ export default class App extends Component {
 
             })}
           </div>
-
-
+          <div className="py-5"></div>
 
           <Footer history={this.props.history}/>
         </div>
