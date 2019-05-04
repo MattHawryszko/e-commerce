@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Quantity from "../components/quantity"
+import ToggleItemWishlist from "../components/toggleItemOnWishlist"
 
 export default class App extends Component {
 render() {
@@ -20,6 +21,7 @@ render() {
         
         <p className="m-0"><small className="text-uppercase text-grey">{"Tags : " + this.props.product.tags}</small></p>
         <p><small className="text-uppercase text-grey">{"Categorys : " + this.props.categories[0] + ", "+this.props.categories[1]}</small></p>
+        <ToggleItemWishlist itemId={this.props.product._id} />      
       </div>
 
       );

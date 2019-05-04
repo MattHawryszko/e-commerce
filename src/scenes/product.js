@@ -23,7 +23,6 @@ export default class App extends Component {
       if(response.status === 400){
         throw new Error()
       }else{
-        console.log(response.data)
         that.setState({product: response.data})
         that.setState({categories: [response.data.categories[0], response.data.categories[1]]})
         response.data.images.forEach(element => {
