@@ -6,14 +6,20 @@ import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 
 import Title from "../components/title";
+import ToggleItemWishlist from "../components/toggleItemOnWishlist"
 
 export default class App extends Component {
   constructor(props){
       
     super(props)
+    this.handleEvent = this.handleEvent.bind(this);
     this.state = {products: [[]], wishlist: [], images: []}
 
 }
+handleEvent(event ,id) {
+  const props = this.props;
+  props.history.push('/product/'+event.target.id)
+};
   async componentWillMount(){
     
     const that = this
@@ -49,6 +55,7 @@ export default class App extends Component {
     window.scrollTo(0, 0);
   }
   render() {
+    var that = this;
     if(this.state.products[1]){
       return (
         <div className="w-100">
@@ -68,12 +75,12 @@ export default class App extends Component {
                       <div className="d-none col-2 col-lg-2 d-sm-block">
                       <div className="row">
                         <div className="col-4 col-lg-4 my-auto">
-                          <i class="fas fa-times p-0 m-0"></i>
+                          <ToggleItemWishlist itemId={product._id} removeIcon="fas fa-times p-0 m-0" />      
                         </div>
                         
                         
                        <div className="col-8 col-lg-8">
-                        <img id={'productImg0'} src={"http://127.0.0.1:8080/images/"+product.images[0]} className="img-fluid wishlist-thumbnail p-0 m-0" alt="product"/>
+                        <img onClick={that.handleEvent} id={product._id} src={"http://127.0.0.1:8080/images/"+product.images[0]} className="pointer-cursor img-fluid wishlist-thumbnail p-0 m-0" alt="product"/>
                        </div>
                       </div>
 
@@ -84,7 +91,7 @@ export default class App extends Component {
                       </div>
                       <div className="col-5 col-sm-4 my-auto">
 
-                        <p id={product.id} className="productName-text">{product.productname}</p>
+                        <span onClick={that.handleEvent} id={product._id} className="pointer-cursor productName-text">{product.productname}</span>
                         
                       </div>
                       <div className="col-2 my-auto">

@@ -61,7 +61,7 @@ export default class App extends Component {
                       <div className="row justify-content-between px-3 pt-3">
                         <small onClick={that.handleEvent} id={product._id} className="pointer-cursor font-weight-bold">{product.productname}</small>
                         
-                        <ToggleItemWishlist itemId={product._id} />      
+                        <ToggleItemWishlist itemId={product._id} addIcon="far fa-heart" removeIcon="fas fa-heart" />      
                       </div>
                       <div className="row px-3 pb-5">
                         <small>{product.price}</small>

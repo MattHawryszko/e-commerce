@@ -62,14 +62,14 @@ render() {
   if(this.state.isItemOnWishlist){
     return (
       <div>
-        <i onClick={this.removeItem} class="fas fa-heart text-orange pointer-cursor"></i>
+        <i onClick={this.removeItem} class={this.props.removeIcon+" text-orange pointer-cursor"}></i>
         
       </div>
       );
   }else{
     return (
       <div>
-        <i onClick={this.addItem} class="far fa-heart pointer-cursor"></i>
+        <i onClick={this.addItem} class={this.props.addIcon+" pointer-cursor"}></i>
         
       </div>
       );
