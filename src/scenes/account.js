@@ -31,6 +31,9 @@ export default class App extends Component {
       super(props)
       this.state = {auth: true}
   }
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
   componentWillMount(){
     checkAuth(this)
   }

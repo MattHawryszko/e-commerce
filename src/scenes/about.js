@@ -15,7 +15,7 @@ import Target from "../img/target.png"
 
 export default class App extends Component {
   componentDidMount(){
-    
+    window.scrollTo(0, 0);
   }
   render() {
     return (

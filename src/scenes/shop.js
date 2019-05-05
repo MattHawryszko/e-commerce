@@ -2,18 +2,26 @@ import React, { Component } from 'react';
 
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
-
+import { Redirect } from 'react-router'
+import { Link } from 'react-router'
 import Title from "../components/title"
 import ToggleItemWishlist from "../components/toggleItemOnWishlist"
 
 const axios = require('axios')
-export default class App extends Component {
-    constructor(props){
-        
-      super(props)
-      this.state = {products: [[]], wishlist: [], images: []}
 
+export default class App extends Component {
+  
+    constructor(props){
+      
+      super(props)
+      this.handleEvent = this.handleEvent.bind(this);
+      this.state = {products: [[]], wishlist: [], images: [], redirect: false}
+      
   }
+  handleEvent(event ,id) {
+    const props = this.props;
+    props.history.push('/product/'+event.target.id)
+  };
   async componentWillMount(){
     
     const that = this
@@ -27,7 +35,11 @@ export default class App extends Component {
       }
     })
   }
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
   render() {
+    var that = this;
     return (
       <div className="w-100">
         <Navbar history={this.props.history} />
@@ -41,12 +53,20 @@ export default class App extends Component {
         <div className="col-12 col-lg-10">
           <div className="row">
             {this.state.products.map(function(product, index){
+              
                 if(product.images){
                   return (
                     <li className="col-6 col-md-3">
-                      <img id={'productImg0'} src={"http://127.0.0.1:8080/images/"+product.images[0]} className="img-fluid wishlist-thumbnail p-0 m-0" alt="product"/>
-                      {product.productname}
-                      <ToggleItemWishlist itemId={product._id} />      
+                      <img onClick={that.handleEvent} id={product._id} src={"http://127.0.0.1:8080/images/"+product.images[0]} className="pointer-cursor img-fluid wishlist-thumbnail p-0 m-0" alt="product"/>
+                      <div className="row justify-content-between px-3 pt-3">
+                        <small onClick={that.handleEvent} id={product._id} className="pointer-cursor font-weight-bold">{product.productname}</small>
+                        
+                        <ToggleItemWishlist itemId={product._id} />      
+                      </div>
+                      <div className="row px-3 pb-5">
+                        <small>{product.price}</small>
+                      </div>
+                      
                     </li>
                     
                   );

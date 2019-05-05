@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 import $ from "jquery";
 
 function scrollFunction() {
-  if($(window).innerWidth() < 168){
+  if($(window).innerWidth() > 768){
     if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60 ) {
       document.getElementById("nav-color").style.backgroundColor = "#000";
-      document.getElementById("navbar-list").style.color = "white";
+      document.getElementById("navbar-list1").style.color = "#FFF";
+      document.getElementById("navbar-list2").style.color = "#FFF";
       document.getElementById("navbar-title").style.color = "white";
       document.getElementById("navbar").style.position = "relative";
       document.getElementById("nav-top").style.position = "absolute";
@@ -15,7 +16,8 @@ function scrollFunction() {
   
     } else {
       document.getElementById("nav-color").style.backgroundColor = "transparent";
-      document.getElementById("navbar-list").style.color = "#254558";
+      document.getElementById("navbar-list1").style.color = "#254558";
+      document.getElementById("navbar-list2").style.color = "#254558";
       document.getElementById("navbar-title").style.color = "#254558";
       document.getElementById("navbar").style.position = "relative";
       document.getElementById("nav-top").style.position = "relative";
@@ -80,14 +82,14 @@ render() {
               <nav id="navbar" className="navbar navbar-expand-lg justify-content-between p-0">
                 <h2 id="home" onClick={this.handleEvent} className="title-font pl-3"><span className="text-yellow">e</span> <span id="navbar-title">Shop</span></h2>
 
-                <ul id="navbar-list" className="d-flex d-md-none p-0 m-0">
+                <ul id="navbar-list1" className="d-flex d-md-none p-0 m-0">
                   <li id="cart" onClick={this.handleEvent} className="text-uppercase font-weight-light pr-1"><i id="cart" class="pt-1 fa-lg pr-1 fas fa-shopping-cart"></i>0</li>
                   <li id="wishlist" onClick={this.handleEvent} className="text-uppercase font-weight-light px-1"><i id="wishlist" class="pt-1 pr-1 fa-lg fas fa-heart"></i>0</li>
                   <li id="cart" onClick={this.handleEvent} className="text-uppercase px-1 "><i id="account" class="pt-1 fa-lg fas fa-user-circle"></i></li>
                   <li role="button" data-toggle="modal" data-target="#exampleModal"><i className="pt-1 pr-1 fas fa-bars fa-lg"></i></li>
                 </ul>
                 
-                <ul id="navbar-list" className="d-none d-md-flex p-0 m-0">
+                <ul id="navbar-list2" className="d-none d-md-flex p-0 m-0">
                   <li id="home" onClick={this.handleEvent} className="text-uppercase">home</li>
                   <li id="about" onClick={this.handleEvent} className="text-uppercase">about</li>
                   <li id="shop" onClick={this.handleEvent} className="text-uppercase">shop</li>

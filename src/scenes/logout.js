@@ -10,6 +10,7 @@ import axios from 'axios';
 
 export default class App extends Component {
   componentDidMount(){
+    window.scrollTo(0, 0);
     const authToken = sessionStorage.getItem('accessToken')
     axios.post('http://127.0.0.1:8080/users/logout', {},{
     

@@ -45,7 +45,9 @@ export default class App extends Component {
       }
     })
   }
-
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
   render() {
     if(this.state.products[1]){
       return (
