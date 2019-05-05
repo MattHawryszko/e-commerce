@@ -12,6 +12,7 @@ export default class App extends Component {
       
     super(props)
     this.state = {products: [[]], wishlist: [], images: []}
+
 }
   async componentWillMount(){
     
@@ -44,9 +45,7 @@ export default class App extends Component {
       }
     })
   }
-  async componentDidMount(){
 
-  }
   render() {
     if(this.state.products[1]){
       return (
@@ -83,7 +82,7 @@ export default class App extends Component {
                       </div>
                       <div className="col-5 col-sm-4 my-auto">
 
-                        <p className="productName-text">{product.productname}</p>
+                        <p id={product.id} className="productName-text">{product.productname}</p>
                         
                       </div>
                       <div className="col-2 my-auto">
