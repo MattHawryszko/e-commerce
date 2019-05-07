@@ -8,14 +8,28 @@ import Footer from "../components/footer"
 import Title from "../components/title";
 import ToggleItemWishlist from "../components/toggleItemOnWishlist"
 
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 export default class App extends Component {
   constructor(props){
       
     super(props)
     this.handleEvent = this.handleEvent.bind(this);
+    this.removeEvent = this.removeEvent.bind(this);
     this.state = {products: [[]], wishlist: [], images: []}
 
 }
+removeEvent(event) {
+  const id = event.target.id
+  try{
+    document.getElementById("li-"+id).classList.add("animated");
+    document.getElementById("li-"+id).classList.add("bounceOutRight");
+    delay(600).finally(()=>{document.getElementById("li-"+id).remove()})
+  }catch{
+    
+  }
+
+};
 handleEvent(event ,id) {
   const props = this.props;
   props.history.push('/product/'+event.target.id)
@@ -69,12 +83,12 @@ handleEvent(event ,id) {
             if(product.images){
               return (
                 <ul className="no-bullets">
-                  <li key={ index }>
+                  <li id={'li-'+product._id} key={ index }>
                     <div className="row">
                       
                       <div className="d-none col-2 col-lg-2 d-sm-block">
                       <div className="row">
-                        <div className="col-4 col-lg-4 my-auto">
+                        <div onClick={that.removeEvent} className="col-4 col-lg-4 my-auto">
                           <ToggleItemWishlist itemId={product._id} removeIcon="fas fa-times p-0 m-0" />      
                         </div>
                         
