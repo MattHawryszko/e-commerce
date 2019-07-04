@@ -19,25 +19,39 @@ export default class App extends Component {
     this.state = {products: [[]], wishlist: [], images: []}
 
 }
+//this part Will remove items from the wishlist
 removeEvent(event) {
   const id = event.target.id
+  
   try{
     document.getElementById("li-"+id).classList.add("animated");
     document.getElementById("li-"+id).classList.add("bounceOutRight");
-    delay(600).finally(()=>{document.getElementById("li-"+id).remove()})
+    delay(600).finally(()=>{
+      var lis = document.getElementById('list')
+      document.getElementById("li-"+id).remove()
+      
+      console.log(lis.getElementsByTagName('li').length)
+      if(lis.getElementsByTagName('li').length === 0){
+        this.setState({hasItems: false})
+      }
+    })
+
   }catch{
     
   }
 
 };
+//this part of the code will handle the click of the item and redirect you to the item
 handleEvent(event ,id) {
   const props = this.props;
   props.history.push('/product/'+event.target.id)
 };
+
+
   async componentWillMount(){
     
     const that = this
-
+    // in this part we will check with the api for items on the wishlist and add them to the state of the react app
     await axios.get('http://127.0.0.1:8080/wishlist/'+window.sessionStorage.getItem('wishlistId'))
     .then(async function(response) {
       if(response.status === 400){
@@ -54,6 +68,9 @@ handleEvent(event ,id) {
               let items = [...that.state.products];
               items.push(response.data)
               await that.setState({products: items})
+              if(items.length >= 1){
+                await that.setState({hasItems: true})
+              }
 
               let images = [...that.state.images];
               items.push(response.data.images[0])
@@ -70,7 +87,7 @@ handleEvent(event ,id) {
   }
   render() {
     var that = this;
-    if(this.state.products[1]){
+    if(this.state.products[1] && this.state.hasItems){
       return (
         <div className="w-100">
           <Navbar history={this.props.history} />
@@ -79,12 +96,13 @@ handleEvent(event ,id) {
           </div>
           <div className="container">
           
-          {this.state.products.map(function(product, index){
+
+                <ul id="list" className="no-bullets">
+                {this.state.products.map(function(product, index){
             if(product.images){
               return (
-                <ul className="no-bullets">
                   <li id={'li-'+product._id} key={ index }>
-                    <div className="row">
+                    <div className="row pb-1">
                       
                       <div className="d-none col-2 col-lg-2 d-sm-block">
                       <div className="row">
@@ -121,12 +139,12 @@ handleEvent(event ,id) {
                     </div>
 
                   </li>
+                                );
+                              }
                   
+                              })}
                 </ul>
-              );
-            }
 
-            })}
           </div>
           <div className="py-5"></div>
 
@@ -140,7 +158,13 @@ handleEvent(event ,id) {
           <div className="container nav-padding">
             <Title class="display-3" text="Wishlist"/>
           </div>
-          No items in wishlist
+          <div className="row justify-content-center pt-5">
+            <i class="far fa-heart fa-8x"></i>
+          </div>
+          <div className="row justify-content-center pt-3 pb-5">
+            <h2 className="pb-5" >No products were added to the wishlist</h2>
+          </div>
+          
           <Footer history={this.props.history}/>
         </div>
       );

@@ -1,0 +1,10 @@
+Things left to do
+
+Home Page (Full)
+Account Page (Full)
+Checkout Page (Full)
+Cart Page (Full)
+
+
+Shop Page (Some small things like sorting and filtering)
+Register Page (Api Integration)
